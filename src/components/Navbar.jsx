@@ -9,9 +9,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md fixed top-0 left-0 w-full z-50">
+    <nav className="bg-white shadow-md fixed   top-0 left-0 w-full z-50">
 
-      <div className="max-w-8xl mx-auto flex items-center justify-between px-5 py-3">
+      <div className="max-w-8xl mx-auto  flex items-center justify-between px-5 py-3">
 
         {/* Logo */}
         <div className="flex items-center gap-3">
@@ -36,6 +36,7 @@ export default function Navbar() {
           <Link className="hover:text-blue-600" href="/">Home</Link>
           <Link className="hover:text-blue-600" href="/about">About</Link>
           <Link className="hover:text-blue-600" href="/skills">Skills</Link>
+          <Link className="hover:text-blue-600" href="/education">Education</Link>
           <Link className="hover:text-blue-600" href="/projects">Projects</Link>
           <Link className="hover:text-blue-600" href="/contact">Contact</Link>
 
@@ -65,6 +66,7 @@ export default function Navbar() {
           <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/">Home</Link>
           <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/about">About</Link>
           <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/skills">Skills</Link>
+          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/education">Education</Link>
           <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/projects">Projects</Link>
           <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/contact">Contact</Link>
 
