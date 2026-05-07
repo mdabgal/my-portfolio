@@ -1,176 +1,180 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <main className="bg-white text-gray-800">
 
       {/* HERO SECTION */}
-      <section className=" min-h-[80vh] flex items-center justify-center px-6  text-center">
+      <section className="min-h-[80vh] flex items-center justify-center px-6 text-center">
 
-        <div className="max-w-4xl">
+        <motion.div
+          className="max-w-4xl"
+          initial="hidden"
+          animate="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: { staggerChildren: 0.2 }
+            }
+          }}
+        >
 
-          <Image
-            src={profilePic}
-            width={130}
-            height={130}
-            alt="profile"
-            className="mx-auto rounded-full border-4 border-blue-500 mb-6"
-          />
+          {/* IMAGE */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, scale: 0.5 },
+              show: { opacity: 1, scale: 1 }
+            }}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 3 }}
+          >
+            <Image
+              src={profilePic}
+              width={130}
+              height={130}
+              alt="profile"
+              className="mx-auto rounded-full border-4 border-blue-500 mb-6 shadow-lg"
+            />
+          </motion.div>
 
-          <p className="text-blue-500 tracking-widest mb-3">
+          {/* ROLE */}
+          <motion.p
+            className="text-blue-500 tracking-widest mb-3"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0 }
+            }}
+          >
             FRONTEND WEB DEVELOPER
-          </p>
+          </motion.p>
 
-          <h1 className="text-5xl font-bold mb-4">
+          {/* TITLE */}
+          <motion.h1
+            className="text-5xl font-bold mb-4"
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              show: { opacity: 1, y: 0 }
+            }}
+          >
             Hi, I'm <span className="text-blue-600">Jannati</span>
-          </h1>
+          </motion.h1>
 
-          <p className="text-gray-600 mb-6">
+          {/* DESCRIPTION */}
+          <motion.p
+            className="text-gray-600 mb-6"
+            variants={{
+              hidden: { opacity: 0 },
+              show: { opacity: 1 }
+            }}
+          >
             Junior Frontend Developer | Programming Hero Learner |
             I build modern responsive websites using Next.js & Tailwind CSS
-          </p>
+          </motion.p>
 
-          <div className="flex justify-center gap-4 flex-wrap">
+          {/* BUTTONS */}
+          <motion.div
+            className="flex justify-center gap-4 flex-wrap"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0 }
+            }}
+          >
 
-            <Link
-              href="/projects"
-              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-            >
-              View Projects
-            </Link>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                href="/projects"
+                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"
+              >
+                View Projects
+              </Link>
+            </motion.div>
 
-            <Link
-              href="/about"
-              className="border border-gray-400 px-6 py-2 rounded-lg hover:bg-gray-100 transition"
-            >
-              About Me
-            </Link>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Link
+                href="/about"
+                className="border border-gray-400 px-6 py-2 rounded-lg hover:bg-gray-100"
+              >
+                About Me
+              </Link>
+            </motion.div>
 
-          </div>
+          </motion.div>
 
-        </div>
-
+        </motion.div>
       </section>
 
-      {/* STATS SECTION */}
+      {/* STATS */}
       <section className="py-16 bg-gray-100 text-center">
-
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-
           <div>
             <h2 className="text-3xl font-bold text-blue-600">8+</h2>
             <p className="text-gray-600">Projects</p>
           </div>
-
           <div>
             <h2 className="text-3xl font-bold text-blue-600">2+</h2>
             <p className="text-gray-600">Years Learning</p>
           </div>
-
           <div>
             <h2 className="text-3xl font-bold text-blue-600">5+</h2>
             <p className="text-gray-600">Technologies</p>
           </div>
-
         </div>
-
       </section>
 
       {/* SKILLS */}
-      <section className="py-20 mt-10 px-6 text-center">
-
+      <section className="py-20 px-6 text-center">
         <h2 className="text-3xl font-bold mb-10">My Skills</h2>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
 
-          <div className="bg-white shadow-2xl p-6 rounded-lg">
+          <div className="bg-white shadow-lg p-6 rounded-xl">
             <h3 className="font-bold mb-2">Frontend</h3>
             <p className="text-gray-600">HTML, CSS, JavaScript, React, Next.js</p>
           </div>
 
-          <div className="bg-white shadow-2xl p-6 rounded-lg">
+          <div className="bg-white shadow-lg p-6 rounded-xl">
             <h3 className="font-bold mb-2">Styling</h3>
             <p className="text-gray-600">Tailwind CSS, Responsive Design</p>
           </div>
 
-          <div className="bg-white shadow-2xl p-6 rounded-lg">
+          <div className="bg-white shadow-lg p-6 rounded-xl">
             <h3 className="font-bold mb-2">Tools</h3>
             <p className="text-gray-600">Git, GitHub, VS Code</p>
           </div>
 
         </div>
-
       </section>
 
+      {/* ABOUT */}
+      <section className="py-20 px-6 bg-gray-100 text-center">
+        <div className="max-w-4xl mx-auto">
 
-<section className="py-20 px-6 bg-gray-100 text-center">
+          <h2 className="text-3xl font-bold mb-6">
+            About Me
+          </h2>
 
-  <div className="max-w-4xl mx-auto">
-
-    <h2 className="text-3xl font-bold mb-6 text-gray-800">
-      About Me
-    </h2>
-
-    <p className="text-gray-600 leading-relaxed text-lg">
-      I am a passionate Junior Frontend Developer from Bangladesh.
-      I started my programming journey with Programming Hero course.
-      I love building modern, responsive and user-friendly websites
-      using Next.js, React and Tailwind CSS.
-    </p>
-
-    <p className="text-gray-600 mt-4 leading-relaxed">
-      My goal is to become a professional Full Stack Developer and
-      work on real-world projects. I enjoy learning new technologies,
-      solving problems and turning ideas into real web applications.
-    </p>
-
-  </div>
-
-</section>
-
-
-
-
-
-
-
-
-
-      {/* FEATURED PROJECTS */}
-      <section className="py-20 px-6 mt-10 bg-gray-100 text-center">
-
-        <h2 className="text-3xl font-bold mb-10">Featured Projects</h2>
-
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-
-          <div className="bg-white shadow-md p-6 rounded-lg">
-            <h3 className="font-bold mb-2">E-commerce Website</h3>
-            <p className="text-gray-600 text-sm">Modern online shop UI</p>
-          </div>
-
-          <div className="bg-white shadow-md p-6 rounded-lg">
-            <h3 className="font-bold mb-2">Portfolio Website</h3>
-            <p className="text-gray-600 text-sm">Personal branding site</p>
-          </div>
-
-          <div className="bg-white shadow-md p-6 rounded-lg">
-            <h3 className="font-bold mb-2">Dashboard UI</h3>
-            <p className="text-gray-600 text-sm">Admin panel design</p>
-          </div>
+          <p className="text-gray-600 leading-relaxed">
+            I am a passionate Junior Frontend Developer from Bangladesh.
+            I love building modern and user-friendly web applications.
+          </p>
 
         </div>
-
       </section>
 
       {/* CONTACT CTA */}
       <section className="py-20 px-6 text-center">
 
-        <h2 className="text-3xl font-bold mb-4">Let’s Work Together</h2>
+        <h2 className="text-3xl font-bold mb-4">
+          Let’s Work Together
+        </h2>
 
         <p className="text-gray-600 mb-6">
-          Have a project idea? Let’s build it 
+          Have a project idea? Let’s build it
         </p>
 
         <Link

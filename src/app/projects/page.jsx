@@ -1,115 +1,70 @@
 import Link from "next/link";
 import Image from "next/image";
-
-const projects = [
-  {
-    title: "Portfolio Website",
-    desc: "A modern personal portfolio built with Next.js and Tailwind CSS.",
-    img: "/images/project1.jpg",
-    live: "https://your-vercel-link.vercel.app",
-    github: "https://github.com/mdabgal/portfolio",
-    tech: ["Next.js", "Tailwind CSS"],
-  },
-  {
-    title: "Authentication App",
-    desc: "Login & signup system with secure authentication.",
-    img: "/images/project2.jpg",
-    live: "https://as-b13-online-learning.vercel.app",
-    github: "https://github.com/mdabgal/as-b13-online-learning",
-    tech: ["Next.js", "MongoDB"],
-  },
-  {
-    title: "Dashboard UI",
-    desc: "Responsive admin dashboard with clean UI design.",
-    img: "/images/project3.jpg",
-    live: "https://deluxe-nasturtium-863882.netlify.app",
-    github: "https://github.com/mdabgal/A6-Digitool-Project",
-    tech: ["React", "Tailwind"],
-  },
-];
+import { projects } from "@/data/projects";
 
 export default function ProjectsPage() {
   return (
-    <main className="bg-gray-50 min-h-screen px-6 py-16">
-      <div className="max-w-6xl mx-auto">
+    <main className="bg-gray-50 mt-20 min-h-screen px-6 py-16">
+      <div className="max-w-6xl  mx-auto">
 
-        {/* HEADER */}
-        <div className="text-center mb-14">
-          <h1 className="text-4xl font-bold text-gray-900 mb-3">
-            My Projects
-          </h1>
-          <p className="text-gray-500">
-            Some of my recent work and practice projects
-          </p>
-        </div>
+        <h1 className="text-4xl font-bold text-center mb-12">
+          My Projects
+        </h1>
 
-        {/* GRID */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <div
-              key={i}
-              className="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition duration-300"
+              key={p.id}
+              className="bg-white border border-gray-200 rounded-xl shadow-2xl hover:shadow-xl transition"
             >
+              <div className="p-4">
 
-              {/* IMAGE */}
-              <Image
+              <Image 
                 src={p.img}
                 alt={p.title}
                 width={500}
                 height={300}
-                className="w-full h-52 object-cover"
+                className="w-full border-2 p-4 shadow-md border-gray-200 h-52 object-cover rounded-xl"
               />
+              </div>
 
-              {/* CONTENT */}
               <div className="p-5">
 
-                <h3 className="text-xl font-semibold mb-2">
-                  {p.title}
-                </h3>
+                <h2 className="text-xl font-semibold">{p.title}</h2>
+                <p className="text-gray-600 text-sm mt-2">{p.desc}</p>
 
-                <p className="text-gray-600 text-sm mb-4">
-                  {p.desc}
-                </p>
-
-                {/* TECH STACK */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {p.tech.map((t, idx) => (
+                <div className="flex gap-2 flex-wrap mt-3">
+                  {p.tech.map((t, i) => (
                     <span
-                      key={idx}
-                      className="text-xs bg-blue-50 text-blue-600 px-2 py-1 rounded-full"
+                      key={i}
+                      className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                {/* LINKS */}
-                <div className="flex gap-3 text-sm">
-
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    className="text-green-600 font-medium hover:underline"
+                <div className="flex justify-between mt-4 text-sm">
+                  <Link
+                    href={`/projects/${p.id}`}
+                    className="text-blue-600 bg-blue-50 p-2 rounded-md"
                   >
-                    Live Demo
-                  </a>
+                    Details →
+                  </Link>
 
-                  <a
-                    href={p.github}
-                    target="_blank"
-                    className="text-gray-700 font-medium hover:underline"
-                  >
-                    GitHub
+                  <a href={p.live} target="_blank" className="text-green-600 bg-green-100 p-2 rounded-full">
+                    Live
                   </a>
-
                 </div>
 
               </div>
+
             </div>
           ))}
 
         </div>
+
       </div>
     </main>
   );

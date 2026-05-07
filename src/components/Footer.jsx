@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-gray-200  border-t border-gray-300 mt-20">
@@ -48,13 +50,36 @@ export default function Footer() {
             </p>
             <p className="text-gray-600 text-sm mt-1">o1754252246</p>
 
-            <div className="flex gap-4 mt-4 text-sm">
+           <div className="flex gap-4 mt-4 text-sm">
 
-              <a href="#" className="text-blue-600 hover:underline">GitHub</a>
-              <a href="#" className="text-blue-600 hover:underline">LinkedIn</a>
-              <a href="#" className="text-blue-600 hover:underline">Facebook</a>
+  <Link
+    href="https://github.com/mdabgal"
+    target="_blank"
+    className="text-blue-600 hover:underline"
+  >
+    GitHub
+  </Link>
 
-            </div>
+  <Link
+    href="https://www.linkedin.com/in/jannati-jannati-0203693b4/"
+
+    target="_blank"
+    className="text-blue-600 hover:underline"
+  >
+    LinkedIn
+  </Link>
+
+  <Link
+    href="https://www.facebook.com/share/18TdQE5oAm"
+    target="_blank"
+    className="text-blue-600 hover:underline"
+  >
+    Facebook
+  </Link>
+
+
+
+</div>
 
           </div>
 
