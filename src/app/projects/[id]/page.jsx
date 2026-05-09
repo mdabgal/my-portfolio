@@ -3,61 +3,84 @@ import { projects } from "@/data/projects";
 import Link from "next/link";
 
 export default async function ProjectDetails({ params }) {
-  const { id } = await params;   // 🔥 IMPORTANT FIX
+  const { id } =await params;
 
-  const project = projects.find((p) => p.id === id);
-
+const project = projects.find((p) => String(p.id) === id);
   if (!project) {
     return (
-      <p className="p-10 text-center text-gray-500">
-        Project not found
-      </p>
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
+        <p className="text-gray-400">Project not found</p>
+      </div>
     );
   }
 
   return (
-    <div className="pt-20 flex justify-center items-center">
+    <main className="bg-black text-white min-h-screen pt-28 px-6 pb-20">
 
-    <main className="max-w-4xl mx-auto  px-6 py-16 mt-20 border border-gray-200 shadow-2xl ">
+      <div className="max-w-4xl mx-auto">
 
-        <div className="flex justify-center items-center ">
+        {/* IMAGE */}
+        <div className="flex justify-center mb-10">
 
-      <Image
-        src={project.img}
-        alt={project.title}
-        width={900}
-        height={500}
-        className="w-[500px] border-2 border-gray-200 p-4 h-80 object-cover rounded-xl"
-      />
-      </div>
+          <div className="p-3 bg-[#111] border border-white/10 rounded-3xl">
 
-      <h1 className="text-3xl font-bold mt-6">
-        {project.title}
-      </h1>
+            <Image
+              src={project.img}
+              alt={project.title}
+              width={900}
+              height={500}
+              className="w-[500px] h-80 object-cover rounded-2xl"
+            />
 
-      <p className="text-gray-600 mt-3">
-        {project.details}
-      </p>
+          </div>
 
-      <div className="flex gap-4 mt-6">
+        </div>
 
-        <a href={project.live} className="text-green-600 bg-green-100 p-2 rounded-full">
-          Live Demo
-        </a>
+        {/* TITLE */}
+        <h1 className="text-4xl font-bold text-center mb-4">
+          {project.title}
+        </h1>
 
-        <a href={project.github} className="text-gray-700 bg-gray-100 p-2 rounded-full">
-          GitHub
-        </a>
+        {/* DESCRIPTION */}
+        <p className="text-gray-400 text-center leading-relaxed max-w-2xl mx-auto">
+          {project.details}
+        </p>
 
-      </div>
+        {/* BUTTONS */}
+        <div className="flex justify-center gap-4 mt-8">
 
-      <div className="mt-10">
-        <Link href="/projects" className="text-blue-600 bg-blue-100 p-3 rounded-md">
-          ← Back
-        </Link>
+          <a
+            href={project.live}
+            target="_blank"
+            className="px-5 py-2 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-600 transition"
+          >
+            Live Demo
+          </a>
+
+          <a
+            href={project.github}
+            target="_blank"
+            className="px-5 py-2 border border-white/10 rounded-xl text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition"
+          >
+            GitHub
+          </a>
+
+        </div>
+
+        {/* BACK BUTTON */}
+        <div className="text-center mt-10">
+
+          <Link
+            href="/projects"
+            className="text-cyan-400 hover:text-cyan-300 transition"
+          >
+            ← Back to Projects
+          </Link>
+
+        </div>
+
       </div>
 
     </main>
-    </div>
   );
 }

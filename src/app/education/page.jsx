@@ -24,45 +24,67 @@ const educationData = [
     title: "Honours",
     institution: "Zawadaga College",
     details: [
-         { label: "Group", value: "Arts" },
-        { label: "Status", value: "Currently Studying" }
+      { label: "Group", value: "Arts" },
+      { label: "Status", value: "Currently Studying" },
     ],
   },
 ];
 
 const EducationCard = ({ item }) => {
   return (
-    <div className="bg-white border border-gray-200 p-5 rounded-xl shadow-sm hover:shadow-md transition duration-300">
-      <h2 className="text-xl font-semibold text-gray-800 mb-1">
+    <div className="bg-[#111] border border-white/10 p-6 rounded-3xl hover:border-cyan-400 transition duration-300">
+
+      <h2 className="text-xl font-bold text-white mb-1">
         {item.title}
       </h2>
-      <p className="text-gray-600 mb-3">{item.institution}</p>
 
-      <div className="space-y-1">
+      <p className="text-cyan-400 mb-4 text-sm">
+        {item.institution}
+      </p>
+
+      <div className="space-y-2 text-gray-400">
         {item.details.map((d, i) => (
-          <p key={i} className="text-gray-700">
-            <span className="font-medium">{d.label}:</span> {d.value}
+          <p key={i}>
+            <span className="text-white font-medium">{d.label}:</span>{" "}
+            {d.value}
           </p>
         ))}
       </div>
+
     </div>
   );
 };
 
-const EducationPage = () => {
+export default function EducationPage() {
   return (
-    <div className="max-w-4xl mx-auto mt-20 p-10">
-      <h1 className="text-3xl font-bold mb-8 text-gray-900">
-        Education
-      </h1>
+  
+<main className="bg-black text-white min-h-screen px-6 pt-20">
+      <div className="max-w-5xl mx-auto">
 
-      <div className="grid gap-5">
-        {educationData.map((item) => (
-          <EducationCard key={item.id} item={item} />
-        ))}
+        {/* HEADER */}
+        <div className="text-center mt-10 mb-14">
+
+          <h1 className="text-5xl font-bold mb-3">
+            My <span className="text-cyan-400">Education</span>
+          </h1>
+
+          <p className="text-gray-400">
+            Academic background and learning journey
+          </p>
+
+        </div>
+
+        {/* CARDS */}
+        <div className="grid gap-6">
+
+          {educationData.map((item) => (
+            <EducationCard key={item.id} item={item} />
+          ))}
+
+        </div>
+
       </div>
-    </div>
-  );
-};
 
-export default EducationPage;
+    </main>
+  );
+}

@@ -4,48 +4,101 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md fixed   top-0 left-0 w-full z-50">
+    <nav className="fixed top-0 left-0 w-full  z-50 backdrop-blur-xl bg-black/40 border-b border-white/10">
 
-      <div className="max-w-8xl mx-auto  flex items-center justify-between px-5 py-3">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-
+        {/* LOGO */}
+        <motion.div
+          whileHover={{ scale: 1.03 }}
+          className="flex items-center gap-4"
+        >
           <Image
             src={profilePic}
-            width={45}
-            height={45}
+            width={50}
+            height={50}
             alt="profile"
-            className="rounded-full h-14"
+            className="rounded-full border border-cyan-400 object-cover"
           />
 
-          <h1 className="font-bold text-blue-600">
-            My Portfolio
-          </h1>
+          <div>
+            <h1 className="text-white font-bold text-xl">
+              Jannati
+            </h1>
+
+            <p className="text-cyan-400 text-xs tracking-[3px] uppercase">
+              Developer
+            </p>
+          </div>
+        </motion.div>
+
+        {/* DESKTOP MENU */}
+        <div className="hidden md:flex items-center gap-8 text-gray-300 font-medium">
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/"
+          >
+            Home
+          </Link>
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/about"
+          >
+            About
+          </Link>
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/skills"
+          >
+            Skills
+          </Link>
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/education"
+          >
+            Education
+          </Link>
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/projects"
+          >
+            Projects
+          </Link>
+
+          <Link
+            className="hover:text-cyan-400 transition duration-300"
+            href="/contact"
+          >
+            Contact
+          </Link>
 
         </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-8 text-gray-700 font-medium">
-
-          <Link className="hover:text-blue-600" href="/">Home</Link>
-          <Link className="hover:text-blue-600" href="/about">About</Link>
-          <Link className="hover:text-blue-600" href="/skills">Skills</Link>
-          <Link className="hover:text-blue-600" href="/education">Education</Link>
-          <Link className="hover:text-blue-600" href="/projects">Projects</Link>
-          <Link className="hover:text-blue-600" href="/contact">Contact</Link>
-
+        {/* RIGHT BUTTON */}
+        <div className="hidden md:block">
+          <Link
+            href="/contact"
+            className="bg-cyan-500 hover:bg-cyan-600 transition px-5 py-2 rounded-xl text-black font-semibold shadow-lg shadow-cyan-500/20"
+          >
+            Hire Me
+          </Link>
         </div>
 
-        {/* Mobile Button */}
+        {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-2xl text-gray-700"
+          className="md:hidden text-3xl text-white"
         >
           ☰
         </button>
@@ -53,25 +106,76 @@ export default function Navbar() {
       </div>
 
       {/* MOBILE MENU */}
-      {open && (
-        <div className="md:hidden bg-white border-t px-5 py-4 flex flex-col gap-4">
+      <AnimatePresence>
 
-          <button
-            onClick={() => setOpen(false)}
-            className="text-right text-xl text-gray-600"
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 px-6 py-6 flex flex-col gap-6 text-gray-300"
           >
-            ✕
-          </button>
 
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/">Home</Link>
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/about">About</Link>
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/skills">Skills</Link>
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/education">Education</Link>
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/projects">Projects</Link>
-          <Link onClick={() => setOpen(false)} className="hover:text-blue-600" href="/contact">Contact</Link>
+            <button
+              onClick={() => setOpen(false)}
+              className="text-right text-2xl text-white"
+            >
+              ✕
+            </button>
 
-        </div>
-      )}
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/"
+            >
+              Home
+            </Link>
+
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/about"
+            >
+              About
+            </Link>
+
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/skills"
+            >
+              Skills
+            </Link>
+
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/education"
+            >
+              Education
+            </Link>
+
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/projects"
+            >
+              Projects
+            </Link>
+
+            <Link
+              onClick={() => setOpen(false)}
+              className="hover:text-cyan-400 transition"
+              href="/contact"
+            >
+              Contact
+            </Link>
+
+          </motion.div>
+        )}
+
+      </AnimatePresence>
 
     </nav>
   );
