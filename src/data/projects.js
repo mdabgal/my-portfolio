@@ -4,7 +4,7 @@ export const projects = [
     title: "Portfolio Website",
     desc: "A modern personal portfolio built with Next.js and Tailwind CSS.",
     img: "/images/project1.jpg",
-    live: "https://your-vercel-link.vercel.app",
+    live: "my-portfolio-ecru-two-25.vercel.app",
     github: "https://github.com/mdabgal/my-portfolio",
     tech: ["Next.js", "Tailwind CSS"],
     details:
