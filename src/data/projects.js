@@ -31,5 +31,39 @@ export const projects = [
     tech: ["React", "Tailwind CSS"],
     details:
       "This is a responsive admin dashboard UI built with React and Tailwind CSS. It includes charts layout, sidebar navigation, and modern UI components."
+  },
+  {
+    id: "clean-design",
+    title: "Friends to keep close in your life",
+    desc: "Responsive  with clean design.",
+    img: "/images/project4.jpg",
+    live: "https://friend-tracker-next-plum.vercel.app",
+    github: "https://github.com/mdabgal/friend-tracker-next",
+    tech: ["React", "Tailwind CSS"],
+    details:
+      "This is a responsive admin dashboard UI built with React and Tailwind CSS. It includes charts layout, sidebar navigation, and modern UI components."
+  },
+  {
+    id: "github-Tracker",
+    title: "gitHub issues Tracker",
+    desc: "login with  issues tracker",
+    img: "/images/project5.jpg",
+    live: "https://friend-tracker-next-plum.vercel.app",
+    github: "https://github.com/mdabgal/friend-tracker-next",
+    tech: ["javaScript", "api"],
+    details:
+      "This is a responsive with javscript and api.It includes charts layout, sidebar navigation,login pages etc"
+  },
+  {
+    id: "layouts-frameworks",
+    title: "responsive design,",
+    desc: "responsive design, layouts& frameworks",
+    img: "/images/project6.jpg",
+    live: "https://mdabgal.github.io/B13-A02-TechWave/",
+    github: "https://github.com/mdabgal/B13-A02-TechWave",
+    tech: ["html", "css"],
+    details:
+      "This is a responsive with html and css includes charts layout, navbar etc"
   }
 ];
+

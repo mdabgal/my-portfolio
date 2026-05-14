@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import profilePic from "../images/Calm and composed in purple.png";
+import logo3 from "../images/logo3.png";
+
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar() {
@@ -19,13 +20,13 @@ export default function Navbar() {
           whileHover={{ scale: 1.03 }}
           className="flex items-center gap-4"
         >
-          <Image
-            src={profilePic}
-            width={50}
-            height={50}
+          {/* <Image
+            src={logo3}
+            width={150}
+            height={150}
             alt="profile"
-            className="rounded-full border border-cyan-400 object-cover"
-          />
+            className="rounded-full bg-amber-950 border bg-amber-950 object-cover"
+          /> */}
 
           <div>
             <h1 className="text-white font-bold text-xl">

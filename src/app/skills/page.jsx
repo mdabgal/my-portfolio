@@ -60,7 +60,7 @@ export default function SkillsPage() {
           <div className="bg-[#111] border border-white/10 p-6 rounded-3xl hover:border-cyan-400 transition">
             <h3 className="font-bold text-cyan-400 mb-2">Frontend</h3>
             <p className="text-gray-400 text-sm">
-              HTML, CSS, JavaScript, React, Next.js
+              HTML, CSS, JavaScript, React, Next.js, MongoDB, express.js
             </p>
           </div>
 
