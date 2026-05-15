@@ -48,8 +48,8 @@ export const projects = [
     title: "gitHub issues Tracker",
     desc: "login with  issues tracker",
     img: "/images/project5.jpg",
-    live: "https://friend-tracker-next-plum.vercel.app",
-    github: "https://github.com/mdabgal/friend-tracker-next",
+    live: "https://mdabgal.github.io/B13-A5-Github-Issue-Trracker-My-Assaiment/",
+    github: " https://github.com/mdabgal/B13-A5-Github-Issue-Trracker-My-Assaiment",
     tech: ["javaScript", "api"],
     details:
       "This is a responsive with javscript and api.It includes charts layout, sidebar navigation,login pages etc"
