@@ -4,8 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects"; // বা তোমার path অনুযায়ী
-import ProjectCard from "@/components/ProjectCard";
+import { projects } from "@/data/projects";
+// import { projects } from "@/data/projects"; // বা তোমার path অনুযায়ী
+
 
 export default function Home() {
   const skills = [
@@ -306,31 +307,37 @@ export default function Home() {
 
 
 {/* PROJECTS PREVIEW */}
-<section className="py-24 px-6 bg-[#0b0b0b]">
-  <div className="max-w-7xl mx-auto text-center">
-    
-    <h2 className="text-4xl md:text-5xl font-bold mb-16">
-      My <span className="text-cyan-400">Projects</span>
-    </h2>
+<div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+  
+  {projects.slice(0, 3).map((p, i) => (
+    <div
+      key={i}
+      className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+    >
+      {/* Image */}
+      <img
+        src={p.img}
+        alt={p.title}
+        className="w-full h-40 object-cover"
+      />
 
-    <div className="grid md:grid-cols-3 gap-8">
-      {projects.slice(0, 3).map((project) => (
-        <ProjectCard key={project.id} project={project} />
-      ))}
+      {/* Content */}
+      <div className="p-4">
+        <h3 className="text-xl font-semibold mb-3">
+          {p.title}
+        </h3>
+
+        <a
+          href={p.link}
+          className="inline-block bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition"
+        >
+          View Details →
+        </a>
+      </div>
     </div>
+  ))}
 
-    <div className="mt-10">
-      <Link
-        href="/projects"
-        className="text-cyan-400 hover:underline"
-      >
-        View All Projects →
-      </Link>
-    </div>
-
-  </div>
-</section>
-
+</div>
 
 
 
