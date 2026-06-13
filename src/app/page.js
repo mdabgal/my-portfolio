@@ -323,6 +323,8 @@ export default function Home() {
         </div>
       </section>
 
+      
+
       {/* CONTACT CTA */}
       <section className="py-24 px-6 text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-cyan-500/5 blur-3xl"></div>
@@ -347,5 +349,6 @@ export default function Home() {
         </div>
       </section>
     </main>
+
   );
 }

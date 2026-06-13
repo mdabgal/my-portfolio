@@ -1,15 +1,23 @@
 export const projects = [
-  {
-    id: "portfolio",
-    title: "Portfolio Website",
-    desc: "A modern personal portfolio built with Next.js and Tailwind CSS.",
-    img: "/images/project1.jpg",
-    live: "my-portfolio-ecru-two-25.vercel.app",
-    github: "https://github.com/mdabgal/my-portfolio",
-    tech: ["Next.js", "Tailwind CSS"],
-    details:
-      "This project is a modern responsive portfolio website built using Next.js and Tailwind CSS. It includes multiple sections like projects, skills, and contact form with clean UI and responsive design."
-  },
+ {
+  id: "pet-adoption",
+  title: "Pet Adoption Platform",
+  desc: "A full-stack pet adoption platform with authentication and pet management.",
+  img: "/images/project7.jpg",
+  live: "https://b13-as9-pet-adoption-client.vercel.app",
+  github: "https://github.com/mdabgal/b13-as9-adoption-client",
+  server: "https://github.com/mdabgal/b13-as9-adoption-server",
+  tech: [
+    "React.js",
+    "Tailwind CSS",
+    "Firebase",
+    "Node.js",
+    "Express.js",
+    "MongoDB"
+  ],
+  details:
+    "A full-stack pet adoption platform where users can browse pets, submit adoption requests, manage pet listings, and interact with a secure backend API. Built with React, Firebase Authentication, Express.js, and MongoDB."
+},
   {
     id: "auth-app",
     title: "Authentication App",
