@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
 import { motion } from "framer-motion";
+import { projects } from "@/data/projects"; // বা তোমার path অনুযায়ী
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   const skills = [
@@ -301,6 +303,37 @@ export default function Home() {
     </div>
   </div>
 </section>
+
+
+{/* PROJECTS PREVIEW */}
+<section className="py-24 px-6 bg-[#0b0b0b]">
+  <div className="max-w-7xl mx-auto text-center">
+    
+    <h2 className="text-4xl md:text-5xl font-bold mb-16">
+      My <span className="text-cyan-400">Projects</span>
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {projects.slice(0, 3).map((project) => (
+        <ProjectCard key={project.id} project={project} />
+      ))}
+    </div>
+
+    <div className="mt-10">
+      <Link
+        href="/projects"
+        className="text-cyan-400 hover:underline"
+      >
+        View All Projects →
+      </Link>
+    </div>
+
+  </div>
+</section>
+
+
+
+
 
       {/* ABOUT SECTION */}
       <section className="py-24 px-6 bg-[#0b0b0b]">
