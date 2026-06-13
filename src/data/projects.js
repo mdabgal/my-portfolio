@@ -8,9 +8,9 @@ export const projects = [
   github: "https://github.com/mdabgal/b13-as9-adoption-client",
   server: "https://github.com/mdabgal/b13-as9-adoption-server",
   tech: [
-    "React.js",
+   "Next.js",
     "Tailwind CSS",
-    "Firebase",
+    
     "Node.js",
     "Express.js",
     "MongoDB"
