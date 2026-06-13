@@ -4,8 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
 import { motion } from "framer-motion";
-import { projects } from "@/data/projects";
-// import { projects } from "@/data/projects"; // বা তোমার path অনুযায়ী
+
+
+
 
 
 export default function Home() {
@@ -20,6 +21,10 @@ export default function Home() {
     "Express.js",
     "MongoDB",
   ];
+
+
+  
+
 
   return (
     <main className="bg-black mt-10 text-white overflow-x-hidden">
@@ -305,39 +310,6 @@ export default function Home() {
   </div>
 </section>
 
-
-{/* PROJECTS PREVIEW */}
-<div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-  
-  {projects.slice(0, 3).map((p, i) => (
-    <div
-      key={i}
-      className="bg-slate-800 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
-    >
-      {/* Image */}
-      <img
-        src={p.img}
-        alt={p.title}
-        className="w-full h-40 object-cover"
-      />
-
-      {/* Content */}
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-3">
-          {p.title}
-        </h3>
-
-        <a
-          href={p.link}
-          className="inline-block bg-blue-500 px-4 py-2 rounded hover:bg-blue-600 transition"
-        >
-          View Details →
-        </a>
-      </div>
-    </div>
-  ))}
-
-</div>
 
 
 
