@@ -18,6 +18,26 @@ export const projects = [
   details:
     "A full-stack pet adoption platform where users can browse pets, submit adoption requests, manage pet listings, and interact with a secure backend API. Built with React, Firebase Authentication, Express.js, and MongoDB."
 },
+
+
+{
+  id: "fable-ebook",
+  title: "Fable Ebook Platform",
+  desc: "A full-stack ebook platform for browsing and managing digital books.",
+  img: "/images/project8.jpg",
+  live: "https://fable-ebook-client.vercel.app/",
+  github: "https://github.com/mdabgal/fable-ebook-client",
+  tech: [
+    "Next.js",
+    "Tailwind CSS",
+    "Express.js",
+    "MongoDB"
+  ],
+  details:
+    "Fable Ebook is a full-stack ebook platform where users can browse books, view book details, and manage ebook data through a REST API. The frontend is built with Next.js and Tailwind CSS, while the backend uses Express.js and MongoDB."
+},
+
+
   {
     id: "auth-app",
     title: "Authentication App",
@@ -29,6 +49,25 @@ export const projects = [
     details:
       "This project includes a full authentication system with login, signup, JWT-based security, and protected routes. It is connected with MongoDB database."
   },
+
+{
+  id: "react-product-app",
+  title: "React Product App",
+  desc: "A responsive product management application with a clean and modern user interface.",
+  img: "/images/project9.jpg",
+  live: "https://react-product-app-kappa.vercel.app/",
+  github: "https://github.com/mdabgal/react-product-app",
+  tech: [
+    "React",
+    "JavaScript",
+    "Tailwind CSS"
+  ],
+  details:
+    "React Product App is a responsive web application built with React. It allows users to browse and manage products through a clean, user-friendly interface. The project focuses on reusable components, responsive design, and smooth user experience."
+},
+
+
+
   {
     id: "dashboard-ui",
     title: "Dashboard UI",

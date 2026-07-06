@@ -17,11 +17,38 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
 
-    console.log(formData);
 
+  //   e.preventDefault();
+
+  //   console.log(formData);
+
+  //   alert("Message Sent Successfully!");
+
+  //   setFormData({
+  //     name: "",
+  //     email: "",
+  //     message: "",
+  //   });
+  // };
+
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const res = await fetch("/api/contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
     alert("Message Sent Successfully!");
 
     setFormData({
@@ -29,7 +56,16 @@ export default function ContactPage() {
       email: "",
       message: "",
     });
-  };
+
+  } else {
+    alert("Something went wrong!");
+  }
+};
+
+
+
+
+
 
   return (
     <main className="bg-black text-white min-h-screen px-6 pt-28 pb-20">
