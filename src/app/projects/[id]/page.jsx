@@ -1,86 +1,216 @@
+
+
 import Image from "next/image";
-import { projects } from "@/data/projects";
 import Link from "next/link";
+import { projects } from "@/data/projects";
+
+import {
+  FaCode,
+  FaTools,
+  FaGithub,
+  FaServer,
+  FaExternalLinkAlt,
+  FaFlagCheckered,
+  FaRocket,
+  FaArrowLeft,
+  FaCheckCircle,
+} from "react-icons/fa";
 
 export default async function ProjectDetails({ params }) {
-  const { id } =await params;
+  const { id } = await params;
 
-const project = projects.find((p) => String(p.id) === id);
+  const project = projects.find((p) => String(p.id) === id);
+
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <p className="text-gray-400">Project not found</p>
+        <p className="text-xl text-gray-400">Project not found</p>
       </div>
     );
   }
 
   return (
-    <main className="bg-black text-white min-h-screen pt-28 px-6 pb-20">
+    <main className="bg-gradient-to-b from-black via-slate-950 to-black text-white min-h-screen pt-28 pb-20 px-6">
+      <div className="max-w-5xl mx-auto">
 
-      <div className="max-w-4xl mx-auto">
-
-        {/* IMAGE */}
-        <div className="flex justify-center mb-10">
-
-          <div className="p-3 bg-[#111] border border-white/10 rounded-3xl">
-
+        {/* Project Image */}
+        <div className="flex justify-center mb-12">
+          <div className="bg-[#111] border border-cyan-500/20 rounded-3xl p-3 shadow-lg shadow-cyan-500/10 hover:shadow-cyan-500/20 transition duration-500">
             <Image
               src={project.img}
               alt={project.title}
               width={900}
               height={500}
-              className="w-[500px] h-80 object-cover rounded-2xl"
+              className="rounded-2xl w-full md:w-[720px] h-auto object-cover"
             />
+          </div>
+        </div>
+
+        {/* Project Title */}
+        <div className="text-center">
+          <h1 className="text-4xl md:text-5xl font-extrabold">
+            {project.title}
+          </h1>
+
+          <p className="text-gray-400 mt-5 max-w-3xl mx-auto leading-8">
+            {project.desc}
+          </p>
+        </div>
+
+        {/* Overview */}
+       <section
+  className="
+    mt-14
+    bg-[#111]
+    border border-white/10
+    rounded-3xl
+    p-8
+    hover:border-cyan-400
+    hover:-translate-y-2
+    hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]
+    transition-all
+    duration-500
+    ease-in-out
+  "
+>
+  <h2 className="flex items-center gap-3 text-2xl font-bold text-cyan-400 mb-5">
+    <FaCode className="text-cyan-400" />
+    Project Overview
+  </h2>
+
+  <p className="text-gray-300 leading-8 text-justify">
+    {project.details}
+  </p>
+</section>
+                {/* Tech Stack */}
+        <section className="mt-14">
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-cyan-400 mb-6">
+            <FaTools />
+            Tech Stack
+          </h2>
+
+          <div className="flex flex-wrap gap-3">
+            {project.tech.map((tech, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-300 hover:bg-cyan-500 hover:text-black transition duration-300"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
+        </section>
+
+        {/* Project Links */}
+        <section className="mt-14">
+          <h2 className="text-2xl font-bold text-cyan-400 mb-6">
+            Project Links
+          </h2>
+
+          <div className="flex flex-wrap justify-center md:justify-start gap-5">
+
+            {/* Live Demo */}
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 py-3 rounded-xl transition duration-300"
+            >
+              <FaExternalLinkAlt />
+              Live Demo
+            </a>
+
+            {/* Client Code */}
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-black px-6 py-3 rounded-xl transition duration-300"
+            >
+              <FaGithub />
+              Client Code
+            </a>
+
+            {/* Server Code */}
+            {project.server && (
+              <a
+                href={project.server}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 border border-green-400 text-green-400 hover:bg-green-500 hover:text-black px-6 py-3 rounded-xl transition duration-300"
+              >
+                <FaServer />
+                Server Code
+              </a>
+            )}
 
           </div>
+        </section>
 
-        </div>
+                {/* Challenges */}
+        {project.challenges && (
+          <section className="mt-14">
+            <h2 className="flex items-center gap-3 text-2xl font-bold text-cyan-400 mb-6">
+              <FaFlagCheckered />
+              Challenges Faced
+            </h2>
 
-        {/* TITLE */}
-        <h1 className="text-4xl font-bold text-center mb-4">
-          {project.title}
-        </h1>
+            <div className="space-y-4">
+              {project.challenges.map((challenge, index) => (
+                <div
+                  key={index}
+                  className="bg-[#111] border border-white/10 rounded-2xl p-5 hover:border-cyan-400 transition duration-300"
+                >
+                  <div className="flex items-start gap-3">
+  <FaCheckCircle className="text-green-400 mt-1 shrink-0" size={18} />
+  <p className="text-gray-300 leading-7">
+    {challenge}
+  </p>
+</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
-        {/* DESCRIPTION */}
-        <p className="text-gray-400 text-center leading-relaxed max-w-2xl mx-auto">
-          {project.details}
-        </p>
+        {/* Future Plans */}
+        {project.futurePlans && (
+          <section className="mt-14">
+            <h2 className="flex items-center gap-3 text-2xl font-bold text-cyan-400 mb-6">
+              <FaRocket />
+              Future Improvements
+            </h2>
 
-        {/* BUTTONS */}
-        <div className="flex justify-center gap-4 mt-8">
+            <div className="space-y-4">
+              {project.futurePlans.map((plan, index) => (
+                <div
+                  key={index}
+                  className="bg-[#111] border border-white/10 rounded-2xl p-5 hover:border-cyan-400 transition duration-300"
+                >
+                <div className="flex items-start gap-3">
+  <FaRocket className="text-cyan-400 mt-1 shrink-0" size={18} />
+  <p className="text-gray-300 leading-7">
+    {plan}
+  </p>
+</div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
-          <a
-            href={project.live}
-            target="_blank"
-            className="px-5 py-2 bg-cyan-500 text-black font-semibold rounded-xl hover:bg-cyan-600 transition"
-          >
-            Live Demo
-          </a>
-
-          <a
-            href={project.github}
-            target="_blank"
-            className="px-5 py-2 border border-white/10 rounded-xl text-gray-300 hover:border-cyan-400 hover:text-cyan-400 transition"
-          >
-            GitHub
-          </a>
-
-        </div>
-
-        {/* BACK BUTTON */}
-        <div className="text-center mt-10">
-
+        {/* Back Button */}
+        <div className="mt-16 flex justify-center">
           <Link
             href="/projects"
-            className="text-cyan-400 hover:text-cyan-300 transition"
+            className="inline-flex items-center gap-2 px-6 py-3 border border-cyan-400 rounded-xl text-cyan-400 hover:bg-cyan-500 hover:text-black transition duration-300"
           >
-            ← Back to Projects
+            <FaArrowLeft />
+            Back to Projects
           </Link>
-
         </div>
 
       </div>
-
     </main>
   );
 }
