@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import profilePic from "../images/Calm and composed in purple.png";
 import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaFacebook } from "react-icons/fa";
 
-
-
+import { projects } from "@/data/projects";
 
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
 
 
   
-
+const featuredProjects = projects.slice(0, 4);
 
   return (
     <main className="bg-black mt-10 text-white overflow-x-hidden">
@@ -54,7 +54,7 @@ export default function Home() {
                 show: { opacity: 1, y: 0 },
               }}
             >
-              Frontend Web Developer
+             MERN Stack Developer
             </motion.p>
 
             <motion.div
@@ -104,35 +104,67 @@ export default function Home() {
               }}
             >
               Programming Hero learner passionate about building modern,
-              responsive and interactive websites using Next.js, React,
-              Tailwind CSS, Node.js and MongoDB.
+              responsive and interactive websites using React.js, Next.js, TypeScript, JavaScript, Tailwind CSS, Node.js, Express.js, and MongoDB.
             </motion.p>
 
-            <motion.div
-              className="flex flex-wrap gap-4"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                show: { opacity: 1, y: 0 },
-              }}
-            >
-              <motion.div whileHover={{ scale: 1.08 }}>
-                <Link
-                  href="/projects"
-                  className="bg-cyan-500 hover:bg-cyan-600 transition px-7 py-3 rounded-2xl font-semibold shadow-lg shadow-cyan-500/20"
-                >
-                  View Projects
-                </Link>
-              </motion.div>
+          <motion.div className="flex flex-wrap gap-4">
+  <motion.div whileHover={{ scale: 1.08 }}>
+    <Link
+      href="/projects"
+      className="inline-flex items-center justify-center bg-cyan-500 hover:bg-cyan-600 transition px-7 py-3 rounded-2xl font-semibold shadow-lg shadow-cyan-500/20 h-12"
+    >
+      🚀 View Projects
+    </Link>
+  </motion.div>
 
-              <motion.div whileHover={{ scale: 1.08 }}>
-                <Link
-                  href="/contact"
-                  className="border border-cyan-400 px-7 py-3 rounded-2xl hover:bg-cyan-500/10 transition"
-                >
-                  Contact Me
-                </Link>
-              </motion.div>
-            </motion.div>
+  <motion.div whileHover={{ scale: 1.08 }}>
+    <a
+      href="https://drive.google.com/file/d/12rb3F6R_MulC3LP7O8NsoBF3ygUzjWwK/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center border border-cyan-400 px-7 py-3 rounded-2xl hover:bg-cyan-500/10 transition font-semibold h-12"
+    >
+      📄 View Resume
+    </a>
+  </motion.div>
+</motion.div>
+
+<motion.div
+  className="flex items-center gap-5 mt-8"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.5 }}
+>
+  <motion.a
+    whileHover={{ scale: 1.2 }}
+    href="https://github.com/mdabgal"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-gray-300 hover:text-cyan-400"
+  >
+    <FaGithub />
+  </motion.a>
+
+  <motion.a
+    whileHover={{ scale: 1.2 }}
+    href="https://www.linkedin.com/in/jannati-jannati-0203693b4"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-gray-300 hover:text-cyan-400"
+  >
+    <FaLinkedin />
+  </motion.a>
+
+  <motion.a
+    whileHover={{ scale: 1.2 }}
+    href="https://www.facebook.com/share/18TdQE5oAm"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-3xl text-gray-300 hover:text-cyan-400"
+  >
+    <FaFacebook />
+  </motion.a>
+</motion.div>
           </div>
 
           {/* RIGHT SIDE */}
@@ -310,9 +342,97 @@ export default function Home() {
   </div>
 </section>
 
+{/* 
+projects section */}
 
 
+<section className="py-24 bg-[#0b0b0b] px-6">
+  <div className="max-w-7xl mx-auto">
 
+    {/* Heading */}
+    <div className="text-center mb-14">
+      <h2 className="text-4xl md:text-5xl font-bold text-white">
+        Featured <span className="text-cyan-400">Projects</span>
+      </h2>
+
+      <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+        A selection of my best full-stack and frontend projects showcasing
+        modern UI, responsive design, authentication, and real-world
+        development experience.
+      </p>
+    </div>
+
+    {/* Cards */}
+    <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+
+      {featuredProjects.map((project) => (
+
+        <div
+          key={project.id}
+          className="group bg-[#111827] border border-slate-700 rounded-3xl overflow-hidden hover:border-cyan-400 transition duration-300 hover:-translate-y-2"
+        >
+
+          {/* Image */}
+          <div className="overflow-hidden">
+            <img
+              src={project.img}
+              alt={project.title}
+              className="w-full h-52 object-cover group-hover:scale-110 transition duration-500"
+            />
+          </div>
+
+          {/* Content */}
+          <div className="p-6">
+
+            <h3 className="text-2xl font-bold text-white mb-3">
+              {project.title}
+            </h3>
+
+            <p className="text-gray-400 text-sm leading-7 line-clamp-3">
+              {project.desc}
+            </p>
+
+            {/* Tech Stack */}
+            <div className="flex flex-wrap gap-2 mt-5">
+              {project.tech.slice(0,3).map((item,index)=>(
+                <span
+                  key={index}
+                  className="text-xs bg-cyan-500/10 border border-cyan-400 text-cyan-300 px-3 py-1 rounded-full"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+
+            {/* Button */}
+            <Link
+              href={`/projects/${project.id}`}
+              className="mt-6 inline-flex items-center justify-center w-full bg-cyan-500 hover:bg-cyan-600 py-3 rounded-xl font-semibold transition"
+            >
+              View Details →
+            </Link>
+
+          </div>
+
+        </div>
+
+      ))}
+
+    </div>
+
+    {/* View All Button */}
+
+    <div className="text-center mt-16">
+      <Link
+        href="/projects"
+        className="inline-flex items-center border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-3 rounded-xl font-semibold transition"
+      >
+        View All Projects →
+      </Link>
+    </div>
+
+  </div>
+</section>
 
       {/* ABOUT SECTION */}
       <section className="py-24 px-6 bg-[#0b0b0b]">

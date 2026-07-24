@@ -9,7 +9,7 @@ export default function Hero() {
       />
 
       <h1 className="text-4xl font-bold mt-4">Jannati Jannati</h1>
-      <p className="text-gray-500">Frontend Developer</p>
+      <p className="text-gray-500">MERN Stack Developer</p>
 
       <a
         href="/resume.pdf"
