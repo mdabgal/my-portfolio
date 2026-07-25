@@ -434,26 +434,45 @@ projects section */}
   </div>
 </section>
 
-      {/* ABOUT SECTION */}
-      <section className="py-24 px-6 bg-[#0b0b0b]">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-8"
-          >
-            About <span className="text-cyan-400">Me</span>
-          </motion.h2>
+ {/* ABOUT SECTION */}
+<section className="py-24 px-6 bg-[#0b0b0b]">
+  <div className="max-w-5xl mx-auto text-center">
+    <motion.h2
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="text-4xl md:text-5xl font-bold mb-8"
+    >
+      About <span className="text-cyan-400">Me</span>
+    </motion.h2>
 
-          <p className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto">
-            I am a passionate Junior Frontend Developer from Bangladesh.
-            Currently learning MERN Stack development from Programming Hero.
-            I enjoy building beautiful UI, responsive layouts and modern web
-            applications.
-          </p>
-        </div>
-      </section>
+    <motion.p
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }}
+      className="text-gray-400 text-lg leading-8 max-w-4xl mx-auto"
+    >
+      I am a passionate <span className="text-cyan-400 font-semibold">MERN Stack Developer</span> from Bangladesh with a strong interest in building modern, responsive, and scalable web applications. My journey began with HTML, CSS, and JavaScript, and I have expanded my skills to React, Next.js, Node.js, Express.js, MongoDB, and Tailwind CSS. I enjoy solving real-world problems, creating clean user interfaces, developing secure backend APIs, and continuously learning new technologies to grow as a professional software developer.
+    </motion.p>
+
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1 }}
+      className="mt-10"
+    >
+      <a
+        href="/about"
+        className="inline-flex items-center px-7 py-3 rounded-2xl bg-cyan-500 text-black font-semibold hover:bg-cyan-600 transition duration-300"
+      >
+        Learn More →
+      </a>
+    </motion.div>
+  </div>
+</section>
 
       
 
