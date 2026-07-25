@@ -1,38 +1,42 @@
-# 🚀 MERN Stack Developer Portfolio
+#  MERN Stack Developer Portfolio
 
 A modern, responsive, and professional portfolio website showcasing my skills, projects, education, and contact information. Built with **Next.js**, **React**, and **Tailwind CSS**.
 
-## 🌐 Live Demo
+##  Live Demo
 
 🔗 https://my-portfolio-ecru-two-25.vercel.app
 
 ---
 
-## 📖 About
+
+ GitHub:
+https://github.com/mdabgal/my-portfolio
+
+##  About
 
 This portfolio represents my journey as a **MERN Stack Developer**. It highlights my technical skills, featured projects, educational background, and provides an easy way to connect with me.
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🎨 Modern & Professional UI
-- 📱 Fully Responsive Design
-- 👤 Hero Section with Resume Button
-- 🙋 About Me Section
-- 💻 Skills Section
-- 🎓 Education Section
-- 📂 Projects Showcase
-- 📄 Project Details Page
-- 🚀 Live Demo & GitHub Links
-- ⚡ Challenges & Future Improvements
-- 📞 Contact Section
-- 📧 Social Media Links
-- ✨ Smooth Animations with Framer Motion
+-  Modern & Professional UI
+-  Fully Responsive Design
+-  Hero Section with Resume Button
+-  About Me Section
+-  Skills Section
+-  Education Section
+-  Projects Showcase
+-  Project Details Page
+-  Live Demo & GitHub Links
+-  Challenges & Future Improvements
+-  Contact Section
+-  Social Media Links
+-  Smooth Animations with Framer Motion
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -49,9 +53,9 @@ This portfolio represents my journey as a **MERN Stack Developer**. It highlight
 
 ---
 
-## 📂 Featured Projects
+##  Featured Projects
 
-### 🍽️ AI Food Restaurant
+###  AI Food Restaurant
 
 - AI-powered restaurant platform
 - JWT Authentication
@@ -59,21 +63,21 @@ This portfolio represents my journey as a **MERN Stack Developer**. It highlight
 - Gemini AI Integration
 - Admin Dashboard
 
-### 💼 NextHire
+###  NextHire
 
 - MERN Job Portal
 - Better Auth
 - Role-Based Authentication
 - Employer & Job Seeker Dashboard
 
-### 🐶 Pet Adoption Platform
+###  Pet Adoption Platform
 
 - Full Stack MERN Application
 - Authentication
 - Pet Management
 - Adoption Requests
 
-### 📚 Fable Ebook Platform
+###  Fable Ebook Platform
 
 - Ebook Management System
 - REST API
@@ -81,7 +85,7 @@ This portfolio represents my journey as a **MERN Stack Developer**. It highlight
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 ```text
 app/
@@ -92,8 +96,7 @@ images/
 ```
 
 ---
-
-## 🚀 Getting Started
+##  Getting Started
 
 Clone the repository
 
@@ -129,27 +132,25 @@ http://localhost:3000
 
 ## 📬 Contact
 
-**Md Abgal Hossain**
+Jannati
 
-📧 Email: mdabgalhossain@gmail.com
+ Email: jannati2917@gmail.com
 
-🌐 Portfolio:
+ Portfolio:
 https://my-portfolio-ecru-two-25.vercel.app
 
-💻 GitHub:
-https://github.com/mdabgal
 
-🔗 LinkedIn:
-https://www.linkedin.com/in/mdabgal
+
+
 
 ---
 
-## ⭐ Support
+##  Support
 
 If you like this project, don't forget to ⭐ star the repository.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License.
