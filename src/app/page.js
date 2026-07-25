@@ -195,7 +195,7 @@ const featuredProjects = projects.slice(0, 4);
       <section className="py-20 border-t border-white/10 border-b border-white/10 bg-[#0b0b0b]">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-10 text-center px-6">
           <div>
-            <h2 className="text-5xl font-bold text-cyan-400 mb-2">8+</h2>
+            <h2 className="text-5xl font-bold text-cyan-400 mb-2">15+</h2>
             <p className="text-gray-400">Projects Completed</p>
           </div>
 
