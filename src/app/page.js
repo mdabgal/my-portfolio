@@ -119,7 +119,7 @@ const featuredProjects = projects.slice(0, 4);
 
   <motion.div whileHover={{ scale: 1.08 }}>
     <a
-      href="https://drive.google.com/file/d/12rb3F6R_MulC3LP7O8NsoBF3ygUzjWwK/view?usp=sharing"
+      href="https://drive.google.com/file/d/1N4H2JA0mqQ9IAKQxgCn-xHt5apu40y0z/view?usp=drive_link"
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center justify-center border border-cyan-400 px-7 py-3 rounded-2xl hover:bg-cyan-500/10 transition font-semibold h-12"
